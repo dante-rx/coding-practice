@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * 
+ * @author nagendra
+ *
+ */
 public class MergeTwoSortedArrayWithVacant {
 
 	public static void main(String[] args) {
