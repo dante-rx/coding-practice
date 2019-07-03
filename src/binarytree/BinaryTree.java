@@ -1,6 +1,7 @@
 package binarytree;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -90,6 +91,13 @@ public class BinaryTree {
 		System.out.println(findPath(root, 8, list3));
 		System.out.println(list3);
 		
+		System.out.println("Building tree from inorder and preorder");
+		int inOrder[] = {4,2,5,1,6,3};//D B E A F C
+		int preOrder[] = {1,2,4,5,3,6};//A B D E C F
+		BinaryTreeNode node = buildTree(preOrder, inOrder, 0, 5);
+		levelOrder(node);
+		
+		
 		
 	}
 
@@ -154,7 +162,15 @@ public class BinaryTree {
 		return 1 + Math.max(getHeight(node.left), getHeight(node.right));
 	}
 
-	// Level Order
+	/**
+	 * Print the Binary Tree in Level Order<br>
+	 *  Start with level 0<br>
+	 * Use Queue to track out numbers<br>
+	 * add \n to indicate a new level is starting 
+	 * root element is considered to be in level 0
+	 * 
+	 * @param node
+	 */
 	public static void levelOrder(BinaryTreeNode node) {
 		Queue<BinaryTreeNode> queue = new LinkedList<>();
 		queue.add(root);
@@ -192,6 +208,12 @@ public class BinaryTree {
 
 	}
 
+	/**
+	 * Check if value exists in given binary tree or not
+	 * @param node
+	 * @param x
+	 * @return
+	 */
 	public static boolean nodeExists(BinaryTreeNode node, int x) {
 		if (node == null){
 			return false;
@@ -209,6 +231,13 @@ public class BinaryTree {
 		return false;
 	}
 	
+	/**
+	 * Find the path from the root node to found node if exist
+	 * @param node
+	 * @param x
+	 * @param list
+	 * @return
+	 */
 	public static boolean findPath(BinaryTreeNode node, int x, List<Integer> list) {
 		if (node == null){
 			return false;
@@ -228,6 +257,55 @@ public class BinaryTree {
 		}
 		list.remove(list.size()-1);
 		return false;
+	}
+	
+	/**
+	 * Create a binary tree from pre and inorder traversal
+	 * @param preOrder
+	 * @param inOrder
+	 * @param inStart
+	 * @param inEnd
+	 * @return
+	 */
+	public static BinaryTreeNode buildTree(int[] preOrder, int[] inOrder, int inStart, int inEnd) {
+		// preorder - root, left, right and so preOrder[0] is the root node.
+		// inorder - left, root, right
+		//find the position of preOrder[0] character in inorder and that's the parent node. 
+		// element after it wll be right child and element before left child.
+		// construct tree recursively
+		BinaryTreeNode node = null;
+		if (inOrder != null && inOrder.length>0) {
+			node = new BinaryTreeNode(preOrder[inStart]);
+		}
+		int indexInOrder = getIndexInOrder(inOrder,preOrder[inStart] );
+		if (indexInOrder > 0) {
+			int a1 [] = Arrays.copyOfRange(inOrder, 0, indexInOrder);
+			if(a1!= null && a1.length > 0) {
+				node.left= buildTree(a1, inOrder, 0, indexInOrder-1);
+			}
+
+		}
+		if (indexInOrder+1 < inEnd) {
+			int a2 [] = Arrays.copyOfRange(inOrder, indexInOrder+1, inEnd);
+			if (a2!= null && a2.length > 0) {
+				node.right = buildTree(a2, inOrder, indexInOrder+1, inEnd);
+			}
+		}
+
+		
+		
+
+		
+		return node;
+	}
+	
+	private  static int getIndexInOrder(int[] inOrder, int x) {
+		for(int i=0;i < inOrder.length;i++) {
+			if (inOrder[i] == x) {
+				return i;
+			}
+		}
+		return -1;
 	}
 }
 
