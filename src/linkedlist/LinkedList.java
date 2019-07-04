@@ -188,6 +188,44 @@ public class LinkedList {
 
 	}
 
+	/**
+	 * Let's sort the linkedlist in O(n) time
+	 */
+	public LinkedList sort(LinkedList ls) {
+		LinkedList mid = getMid(ls);
+		Node midD = mid.start.next;
+		LinkedList midLinkedList = new LinkedList();
+		midLinkedList.start = midD;
+
+		mid.start.next = null;
+		LinkedList left = sort(ls);
+		LinkedList right = sort(midLinkedList);
+
+		return mergeSortedLinkedList(left, right);
+
+	}
+
+	public LinkedList getMid(LinkedList ls) {
+		Node node = ls.start;
+		if (node == null || node.next == null) {
+			return ls;
+		}
+		Node node1 = node.next;
+		Node node2 = node.next.next;
+		while (node2 != null) {
+			node1 = node1.next;
+			node2 = node2.next;
+			if (node2 == null) {
+				node2 = node2.next;
+			}
+		}
+		LinkedList lss = new LinkedList();
+
+		lss.start = node1;
+		return lss;
+
+	}
+
 }
 
 class Node {

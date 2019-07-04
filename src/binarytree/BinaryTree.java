@@ -94,8 +94,8 @@ public class BinaryTree {
 		System.out.println("Building tree from inorder and preorder");
 		int inOrder[] = {4,2,5,1,6,3};//D B E A F C
 		int preOrder[] = {1,2,4,5,3,6};//A B D E C F
-		BinaryTreeNode node = buildTree(preOrder, inOrder, 0, 5);
-		levelOrder(node);
+		BinaryTreeNode node = buildTreeFromPreAndInOrder(preOrder, inOrder, 0, 5);
+		postOrder(node);
 		
 		
 		
@@ -267,40 +267,40 @@ public class BinaryTree {
 	 * @param inEnd
 	 * @return
 	 */
-	public static BinaryTreeNode buildTree(int[] preOrder, int[] inOrder, int inStart, int inEnd) {
+	static int preCounter = 0;
+
+	public static BinaryTreeNode buildTreeFromPreAndInOrder(int[] preOrder, int[] inOrder, int inStart, int inEnd) {
 		// preorder - root, left, right and so preOrder[0] is the root node.
 		// inorder - left, root, right
-		//find the position of preOrder[0] character in inorder and that's the parent node. 
+		// find the position of preOrder[0] character in inorder and that's the parent
+		// node.
 		// element after it wll be right child and element before left child.
 		// construct tree recursively
+
 		BinaryTreeNode node = null;
-		if (inOrder != null && inOrder.length>0) {
-			node = new BinaryTreeNode(preOrder[inStart]);
-		}
-		int indexInOrder = getIndexInOrder(inOrder,preOrder[inStart] );
-		if (indexInOrder > 0) {
-			int a1 [] = Arrays.copyOfRange(inOrder, 0, indexInOrder);
-			if(a1!= null && a1.length > 0) {
-				node.left= buildTree(a1, inOrder, 0, indexInOrder-1);
+		if (preOrder.length > preCounter) {
+			node = new BinaryTreeNode(preOrder[preCounter]);
+			preCounter++;
+			if (inStart == inEnd) {
+				return node;
 			}
 
-		}
-		if (indexInOrder+1 < inEnd) {
-			int a2 [] = Arrays.copyOfRange(inOrder, indexInOrder+1, inEnd);
-			if (a2!= null && a2.length > 0) {
-				node.right = buildTree(a2, inOrder, indexInOrder+1, inEnd);
+			int indexInOrder = getIndexInOrder(inOrder, inStart, inEnd, node.data);
+
+			if (indexInOrder >= 0) {
+				node.left = buildTreeFromPreAndInOrder(preOrder, inOrder, inStart, indexInOrder - 1);
+
+			}
+			if (indexInOrder >= 0) {
+				node.right = buildTreeFromPreAndInOrder(preOrder, inOrder, indexInOrder + 1, inEnd);
 			}
 		}
 
-		
-		
-
-		
 		return node;
 	}
 	
-	private  static int getIndexInOrder(int[] inOrder, int x) {
-		for(int i=0;i < inOrder.length;i++) {
+	private static int getIndexInOrder(int[] inOrder, int start, int end, int x) {
+		for (int i = start; i <= end; i++) {
 			if (inOrder[i] == x) {
 				return i;
 			}

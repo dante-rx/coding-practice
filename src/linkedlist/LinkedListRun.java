@@ -50,5 +50,15 @@ public class LinkedListRun {
 		ls3.removeDuplicates();
 		ls3.print();
 
+		LinkedList ls11 = new LinkedList();
+//		ls11.append(6);
+//		ls11.append(5);
+//		ls11.append(1);
+		ls11.append(2);
+		ls11.append(3);
+
+		LinkedList ll2 = ls11.sort(ls11);
+		ll2.print();
+
 	}
 }
