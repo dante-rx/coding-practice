@@ -167,6 +167,27 @@ public class LinkedList {
 		return ls;
 	}
 
+	public void removeDuplicates() {
+		Node current = start;
+		Node next = current.next;
+
+		while (current != null && next != null) {
+			if (current.data == next.data) {
+
+				// Let's remove next node
+				current.next = next.next;
+
+				// moving reference.
+				next = next.next;
+
+			} else {
+				current = current.next;
+				next = next.next;
+			}
+		}
+
+	}
+
 }
 
 class Node {
