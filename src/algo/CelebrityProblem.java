@@ -35,8 +35,12 @@ import java.util.List;
  * 
  * Output : 1 -1
  * 
- * Explanation : For the above test case the matrix will look like 0 1 0 0 0 0 0
- * 1 0 Here, the celebrity is the person with index 1 ie id 1
+ * Explanation : For the above test case the matrix will look like <br>
+ * 0 0 0<br>
+ * 1 0 0 <br>
+ * 1 1 0 <br>
+ * <br>
+ * Here, the celebrity is the person with index 1 ie id 1
  * 
  * @author nagendra
  *
@@ -45,43 +49,130 @@ public class CelebrityProblem {
 
 	public static void main(String[] args) {
 		int N = 3;
-		int M[][] = { { 0, 1, 0 }, { 0, 0, 0 }, { 0, 1, 0 } };
+		int M[][] = { { 0, 1, 1 }, { 0, 0, 1 }, { 0, 0, 0 } };
 		List<Integer> rows = new ArrayList<>();
-		for(int i =0 ; i< N; i++) {
+		for (int i = 0; i < N; i++) {
 			rows.add(i);
 		}
-		
+
 		celebrityProblemIndex(M, rows);
+
+		int M2[][] = { { 0, 1, 1, 1 }, { 0, 0, 1, 1 }, { 0, 0, 0, 1 }, { 0, 0, 0, 0 } };
+
+		iterativeSolution(M, M.length);
+		iterativeSolution(M2, M2.length);
+		System.out.println(findCelebrity(M2, M2.length));
 
 	}
 
+	/**
+	 * Time complexity
+	 * 
+	 * N/2+ N/4 +N/8+N/16+..... ~ N/2(1 / (1-1/2)) ~ N
+	 * 
+	 * @param M
+	 * @param rows
+	 */
 	private static void celebrityProblemIndex(int[][] M, List<Integer> rows) {
-		
+
 		if (rows.size() == 0) {
 			System.out.println("No celebrity found");
 			return;
 		}
 		if (rows.size() == 1) {
-			System.out.println("Celebrity found:  "+rows.get(0));
+			System.out.println("Celebrity found:  " + rows.get(0));
 			return;
 		}
-		
+
 		List<Integer> newRows = new ArrayList<>();
-		for (int i= 0, j= rows.size()-1; i<= j; i++, j--) {
-			if( M[i][j] == 1) {
-				//then i is not celebrity , j might be celebrity 
-				// ignore i from solution workspace 
-				newRows.add(j);
-				
+		for (int i = 0, j = rows.size() - 1; i <= j; i++, j--) {
+			if (M[rows.get(i)][rows.get(j)] == 0) {
+				// then i is not celebrity , j might be celebrity
+				// ignore i from solution workspace
+				newRows.add(rows.get(i));
+
 			} else {
 				// j is not celebrity , but i might be.
 				// remove j from solution workspace
-				newRows.add(i);
+				newRows.add(rows.get(j));
 			}
 		}
-		
+
 		celebrityProblemIndex(M, newRows);
-		
+
+	}
+
+	public static void iterativeSolution(int[][] M, int n) {
+
+		List<Integer> rows = new ArrayList<>();
+		for (int i = 0; i < n; i++) {
+			rows.add(i);
+		}
+
+		while (true) {
+			List<Integer> newRows = new ArrayList<>();
+			for (int i = 0, j = rows.size() - 1; i < n && i <= j; i++, j--) {
+				if (M[rows.get(i)][rows.get(j)] == 0) {
+					// j is not a celebrity, but i could be celebrity
+					newRows.add(rows.get(i));
+				} else {
+					// j might be celebrity
+					newRows.add(rows.get(j));
+				}
+			}
+
+			if (newRows.size() == 1) {
+				System.out.println("Iterative solution: " + newRows.get(0));
+				break;
+			} else if (newRows.size() == 0) {
+				System.out.println("No solution");
+				break;
+			}
+			rows = newRows;
+
+		}
+	}
+
+	static boolean knows(int[][] M, int a, int b) {
+		return M[a][b] == 1;
+	}
+
+	/**
+	 * Simple and optimized solution for celebrity problem.
+	 * @param M
+	 * @param n
+	 * @return
+	 */
+	static int findCelebrity(int[][] M, int n) {
+
+		int a = 0;
+		int b = n - 1;
+
+		while (a < b) {
+			if (knows(M, a, b)) {
+				a++;
+			} else {
+				b--;
+			}
+		}
+
+		// Now check if a is celebrity.
+
+		for (int i = 0; i < n; i++) {
+			if (a == i) {
+				continue;
+			}
+			if (knows(M, a, i)) {
+				return -1;
+			}
+			
+			if (!knows(M, i, a)) {
+				return -1;
+			}
+
+		}
+		return a;
+
 	}
 
 }

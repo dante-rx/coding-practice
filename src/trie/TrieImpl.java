@@ -5,23 +5,17 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * A Sample implementation of Tries data structure and example to find the
- * longest common prefix in String
+ * A Sample implementation of Tries data structure
  * 
  * @author nagendra
  *
  */
 class TrieNode {
-	boolean leadNode;
+	boolean leafNode;
 	Map<Character, TrieNode> childrens = new HashMap<>();
 
 }
 
-/**
- * 
- * @author nagendra
- *
- */
 class Trie {
 
 	public Trie() {
@@ -30,6 +24,7 @@ class Trie {
 
 	/**
 	 * Simply insert an string in trie
+	 * 
 	 * @param head
 	 * @param str
 	 */
@@ -43,11 +38,12 @@ class Trie {
 			}
 			current = current.childrens.get(x);
 		}
-		current.leadNode = true;
+		current.leafNode = true;
 	}
 
 	/**
-	 * Removing  whole list of elements in trie
+	 * Adding an array of elements in trie
+	 * 
 	 * @param array
 	 * @return
 	 */
@@ -59,62 +55,12 @@ class Trie {
 		return head;
 	}
 
-	/**
-	 * 
-	 * @param array
-	 * @return
-	 */
-	public String findLCP(String[] array) {
-		TrieNode head = this.addFromDictionary(array);
-		
-		TrieNode current = head;
-		StringBuffer sb = new StringBuffer();
-		
-		while (current != null && current.leadNode == false && current.childrens.size() ==1){
-			Set<Character> keySet = current.childrens.keySet();
-			for (Character c:keySet){
-				sb.append(c);
-				current = current.childrens.get(c);
-			}
-			/**
-			 * Can be implemented also via iterator
-			 */
-//			Iterator<Entry<Character, TrieNode>> iterator = current.childrens.entrySet().iterator();
-//			
-//			if(iterator.hasNext()){
-//				Entry<Character, TrieNode> entry = iterator.next();
-//				sb.append(entry.getKey());
-//				current = entry.getValue();
-//				
-//			}
-		}
-		
-		return sb.toString();
-	}
 }
 
-/**
- * Main class
- * 
- * @author nagendra
- *
- */
 public class TrieImpl {
 
 	public static void main(String[] args) {
 		Trie trie = new Trie();
-
-		String[] array = { "code", "coder", "coding", "codable", "codec", "codecs", "coded", "codeless", "codependence",
-				"codependency", "codependent", "codependents", "codes", "codesign", "codesigned", "codeveloped",
-				"codeveloper", "codex", "codify", "codiscovered", "codrive" };
-		
-		String[] array2 = { "ff", "f" };
-		
-		String[] array3 = { "ff", "3" };
-
-		System.out.println("Longest common prefix- " + trie.findLCP(array));
-		System.out.println("Longest common prefix- " + trie.findLCP(array2));
-		System.out.println("Longest common prefix- " + trie.findLCP(array3));
 
 	}
 
