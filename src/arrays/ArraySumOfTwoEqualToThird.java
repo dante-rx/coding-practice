@@ -8,19 +8,16 @@ import java.util.stream.Collectors;
 
 /**
  * 
- * @author nagendra
- * complexity O(n*n)
+ * @author nagendra complexity O(n*n) 1. Find all triplets in array with a+b=c
+ *         (All unique elements) <br>
+ *         2.Find all triplets with zero sum
  *
  */
 
-/*
- * 1. Find all triplets in array with a+b=c (All unique elements)
- * 2.Find all triplets with zero sum
- */
 public class ArraySumOfTwoEqualToThird {
 
 	public static void main(String[] args) {
-		int a[] = {1,2,3,5,6,8};
+		int a[] = { 1, 2, 3, 5, 6, 8 };
 		// 1+2=3 1+5=6 2+3=5 3+5=8 2+6=8
 		solution(a);
 		solution2(a);
@@ -29,130 +26,133 @@ public class ArraySumOfTwoEqualToThird {
 
 	}
 
-	/* Use Hashing
-	 * complexity O(n*n)
-	 * but extra space a[n] for hashing
+	/**
+	 * 1st solution - Use Hashing complexity O(n*n) but extra space a[n] for
+	 * hashing.
+	 * 
 	 */
 	private static void solution(int[] a) {
+		// Step 1. Store all the elements in a set.
 		Set<Integer> set = Arrays.stream(a).boxed().collect(Collectors.toSet());
-		
-		int sum ;
+
+		int sum;
 		int count = 0;
-		for (int i =0; i< a.length;i++) {
-			for (int j =i+1; j<a.length;j++) {
-				sum = a[i]+a[j];
-				if(set.contains(sum)) {
+		// Step 2. Now calculate a+b and check if set is having it as c.
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length; j++) {
+				sum = a[i] + a[j];
+				if (set.contains(sum)) {
 					count++;
 				}
 			}
 		}
 		System.out.println(count);
 	}
-	
+
 	/*
 	 * Unique solution using hashmap
 	 */
 	private static void solution2(int[] a) {
-		
-		
-		int sum ;
+
+		int sum;
 		int count = 0;
 		int max = Integer.MIN_VALUE;
-		for (int x:a) {
+		for (int x : a) {
 			max = Math.max(x, max);
 		}
-		
+
 		Map<Integer, Integer> map = new HashMap<>();
-		for (int i=0; i< max;i++) {
-			map.put(i+1, 0);
+		for (int i = 0; i < max; i++) {
+			map.put(i + 1, 0);
 		}
-		
-		for(int x:a) {
+
+		for (int x : a) {
 			map.put(x, 1);
 		}
-		
-		for (int i=1; i<max;i++) {
-			for (int j=i+1; i+j<=max;j++) {
-				count+=map.get(i)* map.get(j)* map.get(i+j);
+
+		for (int i = 1; i < max; i++) {
+			for (int j = i + 1; i + j <= max; j++) {
+				count += map.get(i) * map.get(j) * map.get(i + j);
 			}
 		}
 		System.out.println(count);
 	}
-	
-	/* Optimal Solution
-	 * complexity O(n*n)
-	 * but one extra space as one for
+
+	/*
+	 * Optimal Solution complexity O(n*n) but one extra space as one for
 	 */
 	private static void solution3(int[] a) {
+		// Step1 : Sort the array
 		Arrays.sort(a);
-		
-		
-		int count = 0;
-		int low= 0, high =0;
-		for (int i =a.length-1 ; i> 0;i--) {
-			low =0;
-			high = i-1;
-			int x = a[i];
 
-			
+		// Step 2:- Take low and high as two pointer and start moving from left and from
+		// right respectively.
+		int count = 0;
+		int low = 0, high = 0;
+		for (int i = a.length - 1; i > 0; i--) {
+			low = 0;
+			high = i - 1;
+			int x = a[i];
 
 			while (low < high) {
 				int y = a[low];
-				int  z = a[high];
-				
-				if (z+y ==x ){
+				int z = a[high];
+
+				if (z + y == x) {
+					// Move low and high both as we have found a solution
 					count++;
 					low++;
 					high--;
-					System.out.println(x+" ," +y +" ,"+z);
-					
-				} else if (z+y > x) {
+					System.out.println(x + " ," + y + " ," + z);
+
+				} else if (z + y > x) {
+					// Move high as value is grater. Is there a solution with lesser value?
 					high--;
 				} else {
+					// Move low as value is less. Is there a solution with higher value?
 					low++;
 				}
 			}
-			
+
 		}
 		System.out.println(count);
 	}
-	
-	static int solution4(int[] arr, int n) 
-    { 
-        // compute the max value in the array 
-        // and create frequency array of size 
-        // max_val + 1. 
-        // We can also use HashMap to store 
-        // frequencies. We have used an array 
-        // to keep remaining code simple. 
-        int max_val = 0; 
-        for (int i = 0; i < n; i++) 
-            max_val = Math.max(max_val, arr[i]); 
-        int[] freq = new int[max_val + 1]; 
-        for (int i = 0; i < n; i++) 
-            freq[arr[i]]++; 
-  
-        int ans = 0; // stores the number of ways 
-  
-        // Case 1: 0, 0, 0 
-        ans += freq[0] * (freq[0] - 1) * (freq[0] - 2) / 6; 
-  
-        // Case 2: 0, x, x 
-        for (int i = 1; i <= max_val; i++) 
-            ans += freq[0] * freq[i] * (freq[i] - 1) / 2; 
-  
-        // Case 3: x, x, 2*x 
-        for (int i = 1; 2 * i <= max_val; i++) 
-            ans += freq[i] * (freq[i] - 1) / 2 * freq[2 * i]; 
-  
-        // Case 4: x, y, x + y 
-        // iterate through all pairs (x, y) 
-        for (int i = 1; i <= max_val; i++) { 
-            for (int j = i + 1; i + j <= max_val; j++) 
-                ans += freq[i] * freq[j] * freq[i + j]; 
-        } 
-  
-        return ans; 
-    } 
+
+	static int solution4(int[] arr, int n) {
+		// compute the max value in the array
+		// and create frequency array of size
+		// max_val + 1.
+		// We can also use HashMap to store
+		// frequencies. We have used an array
+		// to keep remaining code simple.
+		int max_val = 0;
+		for (int i = 0; i < n; i++)
+			max_val = Math.max(max_val, arr[i]);
+		int[] freq = new int[max_val + 1];
+		for (int i = 0; i < n; i++)
+			freq[arr[i]]++;
+
+		int ans = 0; // stores the number of ways
+
+		// Case 1: 0, 0, 0
+		ans += freq[0] * (freq[0] - 1) * (freq[0] - 2) / 6;
+
+		// Case 2: 0, x, x
+		for (int i = 1; i <= max_val; i++)
+			ans += freq[0] * freq[i] * (freq[i] - 1) / 2;
+
+		// Case 3: x, x, 2*x
+		for (int i = 1; 2 * i <= max_val; i++)
+			ans += freq[i] * (freq[i] - 1) / 2 * freq[2 * i];
+
+		// Case 4: x, y, x + y
+		// iterate through all pairs (x, y)
+		for (int i = 1; i <= max_val; i++) {
+			for (int j = i + 1; i + j <= max_val; j++)
+				ans += freq[i] * freq[j] * freq[i + j];
+		}
+
+		return ans;
+	}
 
 }
