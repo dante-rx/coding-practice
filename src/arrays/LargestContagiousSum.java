@@ -25,7 +25,4 @@ public class LargestContagiousSum {
 		return maxSum;
 	}
 
-	private static int[] findArray(int a[]) {
-		return null;
-	}
 }
