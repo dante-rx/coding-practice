@@ -1,75 +1,73 @@
 # Project tree
 
-.
-├── LICENSE
-├── README.md
-├── generateTree.sh
-├── src
-│   ├── algo
-│   │   ├── CelebrityProblem.java
-│   │   ├── FancyNumber.java
-│   │   └── MRUCache.java
-│   ├── arrays
-│   │   ├── ArraySumOfTwoEqualToThird.java
-│   │   ├── DuplicateElementRangeArray.java
-│   │   ├── FindMaxIndexDifference.java
-│   │   ├── FindPairWithGivenSum.java
-│   │   ├── KthLargestElementInArray.java
-│   │   ├── LargestContagiousSum.java
-│   │   ├── LargestMatchingWordInDict.java
-│   │   ├── LargestStringKUniqueChars.java
-│   │   ├── MaxLengthSubArrayWithEqual1And0.java
-│   │   ├── MaxLengthSubArrayWithFixedSum.java
-│   │   ├── MedianOfTwoSortedArrays.java
-│   │   ├── MergeTwoSortedArrayWithVacant.java
-│   │   ├── MetaStringCheck.java
-│   │   ├── NextGreaterElementArray.java
-│   │   ├── PeakElement.java
-│   │   ├── PetrolPumpFilling.java
-│   │   ├── SmallestRangeKList.java
-│   │   ├── SortArray0and1and2.java
-│   │   ├── SortBinaryArray.java
-│   │   ├── SubStringARepeatB.java
-│   │   ├── TestArray.java
-│   │   └── TwoNonRepeatedElements.java
-│   ├── backtracking
-│   │   ├── NQueenProblems.java
-│   │   └── ShortestPathInMaze.java
-│   ├── binarytree
-│   │   ├── BinaryTree.java
-│   │   └── BinaryTreeTest.java
-│   ├── bitwise
-│   │   └── BitWiseTest1.java
-│   ├── bstree
-│   │   ├── BSTreeLCA.java
-│   │   ├── BinarySearchTree.java
-│   │   └── CountBSTNodesWithInRange.java
-│   ├── dynamicprogramming
-│   │   ├── CoinDenominetorDP.java
-│   │   ├── GenerateWordsMax21b.java
-│   │   ├── LongestIncreasingSubSequence.java
-│   │   └── RodCuttingProblem.java
-│   ├── graph
-│   │   ├── FindOrderOfCharactersTopologicalSort.java
-│   │   └── TopologicalSort.java
-│   ├── greedy
-│   │   ├── MiceAndHomeProblem.java
-│   │   └── MinimumCandies.java
-│   ├── heap
-│   │   ├── MedianOfStreamOfIntegers.java
-│   │   └── PriorityQueueExample.java
-│   ├── linkedlist
-│   │   ├── LinkedList.class
-│   │   ├── LinkedList.java
-│   │   ├── LinkedListRun.java
-│   │   ├── MergeSortedList.java
-│   │   └── Node.class
-│   ├── matrix
-│   │   └── MatrixRotate.java
-│   ├── test
-│   │   └── OrderOfCharacters.java
-│   └── trie
-│       ├── LongestCommonPrefixInString.java
-│       └── TrieImpl.java
-└── tree.txt
+- __coding-practice__
+
+    - __algo__
+      - [CelebrityProblem.java](coding-practice/src/algo/CelebrityProblem.java)
+      - [FancyNumber.java](coding-practice/src/algo/FancyNumber.java)
+      - [MRUCache.java](coding-practice/src/algo/MRUCache.java)
+    - __arrays__
+      - [ArraySumOfTwoEqualToThird.java](coding-practice/src/arrays/ArraySumOfTwoEqualToThird.java)
+      - [DuplicateElementRangeArray.java](coding-practice/src/arrays/DuplicateElementRangeArray.java)
+      - [FindMaxIndexDifference.java](coding-practice/src/arrays/FindMaxIndexDifference.java)
+      - [FindPairWithGivenSum.java](coding-practice/src/arrays/FindPairWithGivenSum.java)
+      - [KthLargestElementInArray.java](coding-practice/src/arrays/KthLargestElementInArray.java)
+      - [LargestContagiousSum.java](coding-practice/src/arrays/LargestContagiousSum.java)
+      - [LargestMatchingWordInDict.java](coding-practice/src/arrays/LargestMatchingWordInDict.java)
+      - [LargestStringKUniqueChars.java](coding-practice/src/arrays/LargestStringKUniqueChars.java)
+      - [MaxLengthSubArrayWithEqual1And0.java](coding-practice/src/arrays/MaxLengthSubArrayWithEqual1And0.java)
+      - [MaxLengthSubArrayWithFixedSum.java](coding-practice/src/arrays/MaxLengthSubArrayWithFixedSum.java)
+      - [MedianOfTwoSortedArrays.java](coding-practice/src/arrays/MedianOfTwoSortedArrays.java)
+      - [MergeTwoSortedArrayWithVacant.java](coding-practice/src/arrays/MergeTwoSortedArrayWithVacant.java)
+      - [MetaStringCheck.java](coding-practice/src/arrays/MetaStringCheck.java)
+      - [NextGreaterElementArray.java](coding-practice/src/arrays/NextGreaterElementArray.java)
+      - [PeakElement.java](coding-practice/src/arrays/PeakElement.java)
+      - [PetrolPumpFilling.java](coding-practice/src/arrays/PetrolPumpFilling.java)
+      - [SmallestRangeKList.java](coding-practice/src/arrays/SmallestRangeKList.java)
+      - [SortArray0and1and2.java](coding-practice/src/arrays/SortArray0and1and2.java)
+      - [SortBinaryArray.java](coding-practice/src/arrays/SortBinaryArray.java)
+      - [SubStringARepeatB.java](coding-practice/src/arrays/SubStringARepeatB.java)
+      - [TestArray.java](coding-practice/src/arrays/TestArray.java)
+      - [TwoNonRepeatedElements.java](coding-practice/src/arrays/TwoNonRepeatedElements.java)
+    - __backtracking__
+      - [NQueenProblems.java](coding-practice/src/backtracking/NQueenProblems.java)
+      - [ShortestPathInMaze.java](coding-practice/src/backtracking/ShortestPathInMaze.java)
+    - __binarytree__
+      - [BinaryTree.java](coding-practice/src/binarytree/BinaryTree.java)
+      - [BinaryTreeTest.java](coding-practice/src/binarytree/BinaryTreeTest.java)
+    - __bitwise__
+      - [BitWiseTest1.java](coding-practice/src/bitwise/BitWiseTest1.java)
+    - __graph__
+      - [FindOrderOfCharactersTopologicalSort.java](coding-practice/src/graph/FindOrderOfCharactersTopologicalSort.java)
+      - [TopologicalSort.java](coding-practice/src/graph/TopologicalSort.java)
+    - __bstree__
+      - [BSTreeLCA.java](coding-practice/src/bstree/BSTreeLCA.java)
+      - [BinarySearchTree.java](coding-practice/src/bstree/BinarySearchTree.java)
+      - [CountBSTNodesWithInRange.java](coding-practice/src/bstree/CountBSTNodesWithInRange.java)
+    - __dynamicprogramming__
+      - [CoinDenominetorDP.java](coding-practice/src/dynamicprogramming/CoinDenominetorDP.java)
+      - [GenerateWordsMax21b.java](coding-practice/src/dynamicprogramming/GenerateWordsMax21b.java)
+      - [LongestIncreasingSubSequence.java](coding-practice/src/dynamicprogramming/LongestIncreasingSubSequence.java)
+      - [RodCuttingProblem.java](coding-practice/src/dynamicprogramming/RodCuttingProblem.java)
+    - __heap__
+      - [MedianOfStreamOfIntegers.java](coding-practice/src/heap/MedianOfStreamOfIntegers.java)
+      - [PriorityQueueExample.java](coding-practice/src/heap/PriorityQueueExample.java)
+    - __greedy__
+      - [MiceAndHomeProblem.java](coding-practice/src/greedy/MiceAndHomeProblem.java)
+      - [MinimumCandies.java](coding-practice/src/greedy/MinimumCandies.java)
+    - __linkedlist__
+      - [LinkedList.class](coding-practice/src/linkedlist/LinkedList.class)
+      - [LinkedList.java](coding-practice/src/linkedlist/LinkedList.java)
+      - [LinkedListRun.java](coding-practice/src/linkedlist/LinkedListRun.java)
+      - [MergeSortedList.java](coding-practice/src/linkedlist/MergeSortedList.java)
+      - [Node.class](coding-practice/src/linkedlist/Node.class)
+    - __matrix__
+      - [MatrixRotate.java](coding-practice/src/matrix/MatrixRotate.java)
+    - __test__
+      - [OrderOfCharacters.java](coding-practice/src/test/OrderOfCharacters.java)
+    - __trie__
+      - [LongestCommonPrefixInString.java](coding-practice/src/trie/LongestCommonPrefixInString.java)
+      - [TrieImpl.java](coding-practice/src/trie/TrieImpl.java)
+
+
 
