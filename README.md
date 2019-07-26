@@ -1,1 +1,73 @@
-# coding-practice
+# List of Problems
+
+- __coding-practice__
+
+    - __algo__
+      - [CelebrityProblem.java](src/algo/CelebrityProblem.java)
+      - [FancyNumber.java](src/algo/FancyNumber.java)
+      - [MRUCache.java](src/algo/MRUCache.java)
+    - __arrays__
+      - [ArraySumOfTwoEqualToThird.java](src/arrays/ArraySumOfTwoEqualToThird.java)
+      - [DuplicateElementRangeArray.java](src/arrays/DuplicateElementRangeArray.java)
+      - [FindMaxIndexDifference.java](src/arrays/FindMaxIndexDifference.java)
+      - [FindPairWithGivenSum.java](src/arrays/FindPairWithGivenSum.java)
+      - [KthLargestElementInArray.java](src/arrays/KthLargestElementInArray.java)
+      - [LargestContagiousSum.java](src/arrays/LargestContagiousSum.java)
+      - [LargestMatchingWordInDict.java](src/arrays/LargestMatchingWordInDict.java)
+      - [LargestStringKUniqueChars.java](src/arrays/LargestStringKUniqueChars.java)
+      - [MaxLengthSubArrayWithEqual1And0.java](src/arrays/MaxLengthSubArrayWithEqual1And0.java)
+      - [MaxLengthSubArrayWithFixedSum.java](src/arrays/MaxLengthSubArrayWithFixedSum.java)
+      - [MedianOfTwoSortedArrays.java](src/arrays/MedianOfTwoSortedArrays.java)
+      - [MergeTwoSortedArrayWithVacant.java](src/arrays/MergeTwoSortedArrayWithVacant.java)
+      - [MetaStringCheck.java](src/arrays/MetaStringCheck.java)
+      - [NextGreaterElementArray.java](src/arrays/NextGreaterElementArray.java)
+      - [PeakElement.java](src/arrays/PeakElement.java)
+      - [PetrolPumpFilling.java](src/arrays/PetrolPumpFilling.java)
+      - [SmallestRangeKList.java](src/arrays/SmallestRangeKList.java)
+      - [SortArray0and1and2.java](src/arrays/SortArray0and1and2.java)
+      - [SortBinaryArray.java](src/arrays/SortBinaryArray.java)
+      - [SubStringARepeatB.java](src/arrays/SubStringARepeatB.java)
+      - [TestArray.java](src/arrays/TestArray.java)
+      - [TwoNonRepeatedElements.java](src/arrays/TwoNonRepeatedElements.java)
+    - __backtracking__
+      - [NQueenProblems.java](src/backtracking/NQueenProblems.java)
+      - [ShortestPathInMaze.java](src/backtracking/ShortestPathInMaze.java)
+    - __binarytree__
+      - [BinaryTree.java](src/binarytree/BinaryTree.java)
+      - [BinaryTreeTest.java](src/binarytree/BinaryTreeTest.java)
+    - __bitwise__
+      - [BitWiseTest1.java](src/bitwise/BitWiseTest1.java)
+    - __graph__
+      - [FindOrderOfCharactersTopologicalSort.java](src/graph/FindOrderOfCharactersTopologicalSort.java)
+      - [TopologicalSort.java](src/graph/TopologicalSort.java)
+    - __bstree__
+      - [BSTreeLCA.java](src/bstree/BSTreeLCA.java)
+      - [BinarySearchTree.java](src/bstree/BinarySearchTree.java)
+      - [CountBSTNodesWithInRange.java](src/bstree/CountBSTNodesWithInRange.java)
+    - __dynamicprogramming__
+      - [CoinDenominetorDP.java](src/dynamicprogramming/CoinDenominetorDP.java)
+      - [GenerateWordsMax21b.java](src/dynamicprogramming/GenerateWordsMax21b.java)
+      - [LongestIncreasingSubSequence.java](src/dynamicprogramming/LongestIncreasingSubSequence.java)
+      - [RodCuttingProblem.java](src/dynamicprogramming/RodCuttingProblem.java)
+    - __heap__
+      - [MedianOfStreamOfIntegers.java](src/heap/MedianOfStreamOfIntegers.java)
+      - [PriorityQueueExample.java](src/heap/PriorityQueueExample.java)
+    - __greedy__
+      - [MiceAndHomeProblem.java](src/greedy/MiceAndHomeProblem.java)
+      - [MinimumCandies.java](src/greedy/MinimumCandies.java)
+    - __linkedlist__
+      - [LinkedList.class](src/linkedlist/LinkedList.class)
+      - [LinkedList.java](src/linkedlist/LinkedList.java)
+      - [LinkedListRun.java](src/linkedlist/LinkedListRun.java)
+      - [MergeSortedList.java](src/linkedlist/MergeSortedList.java)
+      - [Node.class](src/linkedlist/Node.class)
+    - __matrix__
+      - [MatrixRotate.java](src/matrix/MatrixRotate.java)
+    - __test__
+      - [OrderOfCharacters.java](src/test/OrderOfCharacters.java)
+    - __trie__
+      - [LongestCommonPrefixInString.java](src/trie/LongestCommonPrefixInString.java)
+      - [TrieImpl.java](src/trie/TrieImpl.java)
+
+
+

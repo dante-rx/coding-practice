@@ -70,9 +70,11 @@ public class FindMaxIndexDifference {
 	 * @return
 	 */
 	private static int findMaxIndexDifferenceOptimal(int[] a) {
-
+		
+		// Step1 :- Create A array(MinArray) with size a.length and fill the
+		// elements with minumum of A[i] and A[i-1]
 		int n = a.length;
-		// array containing minimums
+		// array containing minimums - [34, 8, 8, 3, 2, 2, 2, 2, 1]
 		int A[] = new int[n];
 		A[0] = a[0];
 		for (int i = 1; i < n; i++) {
@@ -80,6 +82,9 @@ public class FindMaxIndexDifference {
 		}
 
 		// array containing maximums
+		// Step2 :- Create B array(max Array) with size a.length and fill the
+		// elements backwards with maximum of B[j] and B[j-1]
+		// This is [80, 80, 80, 80, 80, 80, 33, 33, 1]
 		int B[] = new int[n];
 		B[n - 1] = a[n - 1];
 		for (int j = n - 2; j >= 0; j--) {
@@ -88,6 +93,7 @@ public class FindMaxIndexDifference {
 
 		int i = 0, maxDiff = -1;
 		int j = 0;
+		//Step3 : Compare with i & j and check the diff. store maxdiff as temp variable to hold the difference.
 		while (i < n && j < n) {
 			if (B[j] > A[i]) {
 				maxDiff = Math.max(j - i, maxDiff);

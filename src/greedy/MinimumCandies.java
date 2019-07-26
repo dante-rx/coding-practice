@@ -26,7 +26,37 @@ public class MinimumCandies {
 		getMinimumCandies(d);
 		getMinimumCandies(e);
 		
+		getMinimumCandies2(a);
+		getMinimumCandies2(b);
+		getMinimumCandies2(c);
+		getMinimumCandies2(d);
+		getMinimumCandies2(e);
+		
 
+	}
+
+	private static void getMinimumCandies2(int[] a) {
+		int b[] = new int[a.length];
+		Arrays.fill(b, 1);
+		for (int i = 0; i < a.length - 1; i++) {
+			if (a[i] > a[i + 1]) {
+				b[i] = b[i + 1] + 1;
+			} else if (a[i] < a[i + 1] && b[i + 1] <= b[i]) {
+				b[i + 1] = b[i] + 1;
+			}
+		}
+
+		for (int i = a.length - 1; i > 0; i--) {
+			if (a[i] > a[i - 1] && b[i] <= b[i - 1]) {
+				b[i] = b[i - 1] + 1;
+			} else if (a[i] < a[i - 1] && b[i - 1] <= b[i]) {
+				b[i - 1] = b[i] + 1;
+			}
+		}
+		
+		System.out.println("Input: "+Arrays.toString(a));
+		System.out.println("Candies: "+Arrays.toString(b));
+		System.out.println();
 	}
 
 	private static void getMinimumCandies(int[] a) {

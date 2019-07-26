@@ -22,6 +22,7 @@ public class DuplicateElementRangeArray {
 		solution2(a2);
 
 		solution3(a);
+		solution3(a2);
 	}
 
 	/**
@@ -40,7 +41,10 @@ public class DuplicateElementRangeArray {
 		System.out.println("Duplicate element "+ element); 
 	}
 	
-	/** using Hashing as Set
+	/**
+	 * using Hashing as Set <br>
+	 * 1. If found return this element. <br>
+	 * 2. Else Add element in set if not found
 	 * 
 	 * @param a
 	 */

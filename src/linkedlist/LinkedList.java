@@ -106,23 +106,6 @@ public class LinkedList {
 
 	}
 
-	public static LinkedList mergeSortedLinkedList2(LinkedList list1, LinkedList list2) {
-		Node node1 = list1.start;
-		Node node2 = list2.start;
-		LinkedList ls = new LinkedList();
-		while (node1 != null || node2 != null) {
-			if (node1 != null && node1.data <= node2.data) {
-				ls.append(node1.data);
-				node1 = node1.next;
-			} else if (node2 != null) {
-				ls.append(node2.data);
-				node2 = node2.next;
-			}
-		}
-
-		return ls;
-	}
-
 	/**
 	 * Easy way of doing merge of two link list
 	 * 
@@ -146,13 +129,12 @@ public class LinkedList {
 		while (node1 != null && node2 != null) {
 			if (node1.data <= node2.data) {
 				node3.next = node1;
-				node3 = node3.next;
 				node1 = node1.next;
 			} else {
 				node3.next = node2;
-				node3 = node3.next;
 				node2 = node2.next;
 			}
+			node3 = node3.next;
 		}
 
 		if (node1 != null) {
