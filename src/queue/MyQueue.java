@@ -9,4 +9,6 @@ public interface MyQueue<T> {
 	public T head();
 
 	public boolean isEmpty();
+	
+	public int size();
 }

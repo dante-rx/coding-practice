@@ -48,7 +48,26 @@ public class ImmutableQueue<T> implements MyQueue<T>{
 		return queue.isEmpty();
 	}
 	
+	@Override
+	public int size() {
+		return queue.size();
+	}
+	
 	public static void main(String[] args) {
+		MyQueue<Integer> queue = new ImmutableQueue<>();
+		queue.add(5);
+		
+		MyQueue<Integer>  queue2= queue.add(7);
+		queue2= queue2.add(6);
+		
+		System.out.println(queue.size());
+		System.out.println(queue2.size());
+		queue2 = queue2.remove();
+		System.out.println(queue2.size());
+		
+		
+		
+		
 
 	}
 
