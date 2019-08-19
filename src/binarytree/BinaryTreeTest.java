@@ -4,7 +4,9 @@
 package binarytree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author nagendra
@@ -64,7 +66,23 @@ public class BinaryTreeTest {
 		int inOrder[] = {4,2,5,1,6,3};//D B E A F C
 		int preOrder[] = {1,2,4,5,3,6};//A B D E C F
 		BinaryTreeNode node = binaryTree.buildTreeFromPreAndInOrder(preOrder, inOrder, 0, 5);
+		
 		binaryTree.postOrder(node);
+		System.out.println();
+		binaryTree.inOrder(node);
+		System.out.println();
+		
+		int postOrder[] = {4,5,2,6,3,1};
+		System.out.println("\nBuilding Complete tree from preOrder and postOrder");
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i=0; i< postOrder.length;i++) {
+			map.put(postOrder[i], i);
+		}
+		BinaryTreeNode node2 = binaryTree.buildTreeFromPreAndPostOrder(preOrder, postOrder, 0, 5, map);
+		binaryTree.inOrder(node2);
+		
+		
+		
 		
 		
 		

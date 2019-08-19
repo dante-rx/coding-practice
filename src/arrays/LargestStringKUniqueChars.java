@@ -106,10 +106,9 @@ public class LargestStringKUniqueChars {
 	}
 
 	private static String getString(Position p) {
-		String str = Character.toString(p.c);
 		String returnS = "";
 		for (int i = p.start; i <= p.end; i++) {
-			returnS = returnS + str;
+			returnS = returnS + p.c;
 		}
 		return returnS;
 
