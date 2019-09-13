@@ -6,49 +6,72 @@
       - [CelebrityProblem.java](src/algo/CelebrityProblem.java)
       - [FancyNumber.java](src/algo/FancyNumber.java)
       - [MRUCache.java](src/algo/MRUCache.java)
+    - __backtracking__
+      - [NQueenProblems.java](src/backtracking/NQueenProblems.java)
+      - [ShortestPathInMaze.java](src/backtracking/ShortestPathInMaze.java)
     - __arrays__
       - [ArraySumOfTwoEqualToThird.java](src/arrays/ArraySumOfTwoEqualToThird.java)
+      - [CollinearTriplets.java](src/arrays/CollinearTriplets.java)
       - [DuplicateElementRangeArray.java](src/arrays/DuplicateElementRangeArray.java)
       - [FindMaxIndexDifference.java](src/arrays/FindMaxIndexDifference.java)
       - [FindPairWithGivenSum.java](src/arrays/FindPairWithGivenSum.java)
+      - [FlightsInMovie.java](src/arrays/FlightsInMovie.java)
       - [KthLargestElementInArray.java](src/arrays/KthLargestElementInArray.java)
-      - [LargestContagiousSum.java](src/arrays/LargestContagiousSum.java)
       - [LargestMatchingWordInDict.java](src/arrays/LargestMatchingWordInDict.java)
+      - [LargestContagiousSum.java](src/arrays/LargestContagiousSum.java)
       - [LargestStringKUniqueChars.java](src/arrays/LargestStringKUniqueChars.java)
       - [MaxLengthSubArrayWithEqual1And0.java](src/arrays/MaxLengthSubArrayWithEqual1And0.java)
       - [MaxLengthSubArrayWithFixedSum.java](src/arrays/MaxLengthSubArrayWithFixedSum.java)
+      - [MaxProductSubArray.java](src/arrays/MaxProductSubArray.java)
       - [MedianOfTwoSortedArrays.java](src/arrays/MedianOfTwoSortedArrays.java)
       - [MergeTwoSortedArrayWithVacant.java](src/arrays/MergeTwoSortedArrayWithVacant.java)
       - [MetaStringCheck.java](src/arrays/MetaStringCheck.java)
-      - [NextGreaterElementArray.java](src/arrays/NextGreaterElementArray.java)
       - [PeakElement.java](src/arrays/PeakElement.java)
+      - [NextGreaterElementArray.java](src/arrays/NextGreaterElementArray.java)
       - [PetrolPumpFilling.java](src/arrays/PetrolPumpFilling.java)
       - [SmallestRangeKList.java](src/arrays/SmallestRangeKList.java)
       - [SortArray0and1and2.java](src/arrays/SortArray0and1and2.java)
       - [SortBinaryArray.java](src/arrays/SortBinaryArray.java)
+      - [StringConversionGoogle.java](src/arrays/StringConversionGoogle.java)
       - [SubStringARepeatB.java](src/arrays/SubStringARepeatB.java)
       - [TestArray.java](src/arrays/TestArray.java)
+      - [TotalCountSubArrayWithFixedSum.java](src/arrays/TotalCountSubArrayWithFixedSum.java)
       - [TwoNonRepeatedElements.java](src/arrays/TwoNonRepeatedElements.java)
-    - __backtracking__
-      - [NQueenProblems.java](src/backtracking/NQueenProblems.java)
-      - [ShortestPathInMaze.java](src/backtracking/ShortestPathInMaze.java)
     - __binarytree__
       - [BinaryTree.java](src/binarytree/BinaryTree.java)
+      - [LargestCompleteBTInBT.java](src/binarytree/LargestCompleteBTInBT.java)
       - [BinaryTreeTest.java](src/binarytree/BinaryTreeTest.java)
     - __bitwise__
       - [BitWiseTest1.java](src/bitwise/BitWiseTest1.java)
-    - __graph__
-      - [FindOrderOfCharactersTopologicalSort.java](src/graph/FindOrderOfCharactersTopologicalSort.java)
-      - [TopologicalSort.java](src/graph/TopologicalSort.java)
+      - [SumOfTwoPowersToN.java](src/bitwise/SumOfTwoPowersToN.java)
     - __bstree__
       - [BSTreeLCA.java](src/bstree/BSTreeLCA.java)
       - [BinarySearchTree.java](src/bstree/BinarySearchTree.java)
+      - [BinaryTreeCount.java](src/bstree/BinaryTreeCount.java)
+      - [CatalnNumber.java](src/bstree/CatalnNumber.java)
       - [CountBSTNodesWithInRange.java](src/bstree/CountBSTNodesWithInRange.java)
+    - __codingTest__
+      - [ArrayMaxIndexDifferenceBasedOnCondition.java](src/codingTest/ArrayMaxIndexDifferenceBasedOnCondition.java)
+      - [BallsRearranging.java](src/codingTest/BallsRearranging.java)
+      - [EmployeeWithLesserThanKBreaks.java](src/codingTest/EmployeeWithLesserThanKBreaks.java)
+      - [FindTotalUniqueCountries.java](src/codingTest/FindTotalUniqueCountries.java)
+      - [LongestBiValuedContigiousSubArray.java](src/codingTest/LongestBiValuedContigiousSubArray.java)
+      - [Main.java](src/codingTest/Main.java)
+      - [MergeInterval.java](src/codingTest/MergeInterval.java)
+      - [OverlappingTimeRange.java](src/codingTest/OverlappingTimeRange.java)
     - __dynamicprogramming__
       - [CoinDenominetorDP.java](src/dynamicprogramming/CoinDenominetorDP.java)
       - [GenerateWordsMax21b.java](src/dynamicprogramming/GenerateWordsMax21b.java)
       - [LongestIncreasingSubSequence.java](src/dynamicprogramming/LongestIncreasingSubSequence.java)
+      - [StairCaseProblems.java](src/dynamicprogramming/StairCaseProblems.java)
       - [RodCuttingProblem.java](src/dynamicprogramming/RodCuttingProblem.java)
+    - __graph__
+      - [DiameterOfGraph.java](src/graph/DiameterOfGraph.java)
+      - [DisjointSet.java](src/graph/DisjointSet.java)
+      - [FindOrderOfCharactersTopologicalSort.java](src/graph/FindOrderOfCharactersTopologicalSort.java)
+      - [GraphTravelledPoints.java](src/graph/GraphTravelledPoints.java)
+      - [MinimumSpanningTree.java](src/graph/MinimumSpanningTree.java)
+      - [TopologicalSort.java](src/graph/TopologicalSort.java)
     - __heap__
       - [MedianOfStreamOfIntegers.java](src/heap/MedianOfStreamOfIntegers.java)
       - [PriorityQueueExample.java](src/heap/PriorityQueueExample.java)
@@ -58,16 +81,39 @@
     - __linkedlist__
       - [LinkedList.class](src/linkedlist/LinkedList.class)
       - [LinkedList.java](src/linkedlist/LinkedList.java)
+      - [LinkedListRun.class](src/linkedlist/LinkedListRun.class)
       - [LinkedListRun.java](src/linkedlist/LinkedListRun.java)
       - [MergeSortedList.java](src/linkedlist/MergeSortedList.java)
       - [Node.class](src/linkedlist/Node.class)
     - __matrix__
       - [MatrixRotate.java](src/matrix/MatrixRotate.java)
+      - [MatrixSpiral.java](src/matrix/MatrixSpiral.java)
+    - __queue__
+      - [ImmutableQueue.java](src/queue/ImmutableQueue.java)
+      - [MyQueue.java](src/queue/MyQueue.java)
+    - __random__
+      - [MedianOfStreams.java](src/random/MedianOfStreams.java)
+      - [RandomCode1.java](src/random/RandomCode1.java)
+      - [RandomLineInFile.java](src/random/RandomLineInFile.java)
+    - __set__
+      - [GFG.java](src/set/GFG.java)
+      - [SnakeAndLadder2.java](src/set/SnakeAndLadder2.java)
+      - [SnakeAndLadder3.java](src/set/SnakeAndLadder3.java)
+      - [SnakeAndLadder.java](src/set/SnakeAndLadder.java)
+      - [UniqueMeals.java](src/set/UniqueMeals.java)
+      - [ValidAnagram.java](src/set/ValidAnagram.java)
+    - __string__
+      - [GroupAnagram.java](src/string/GroupAnagram.java)
+      - [LengthOfLongestSubstring.java](src/string/LengthOfLongestSubstring.java)
+      - [StringInputStreamConversion.java](src/string/StringInputStreamConversion.java)
+      - [PrintAllPossibleString.java](src/string/PrintAllPossibleString.java)
+      - [StringIntern.java](src/string/StringIntern.java)
+      - [StringReplaceMultipleCharsWithSingle.java](src/string/StringReplaceMultipleCharsWithSingle.java)
+      - [SwapFirstLastCharInWorsInSentence.java](src/string/SwapFirstLastCharInWorsInSentence.java)
     - __test__
       - [OrderOfCharacters.java](src/test/OrderOfCharacters.java)
+    - __thread__
     - __trie__
       - [LongestCommonPrefixInString.java](src/trie/LongestCommonPrefixInString.java)
       - [TrieImpl.java](src/trie/TrieImpl.java)
-
-
 
