@@ -1,15 +1,13 @@
-package set;
+package codingTest;
 
 import java.util.Arrays;
 
-public class Test {
+public class BallsRearranging {
 
 	public static void main(String[] args) {
 		System.out.println("hello");
 		int array[] = {6,4,1,7,10};
 		System.out.println(ballsRearranging(array));
-//		System.out.println(ballsRearranging(new int[] {25, 23}));
-//		System.out.println(ballsRearranging(new int[] {25, 24}));
 
 	}
 

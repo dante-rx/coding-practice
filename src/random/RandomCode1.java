@@ -1,7 +1,7 @@
 /**
  * 
  */
-package javacoding;
+package random;
 
 import java.util.ArrayList;
 import java.util.Arrays;

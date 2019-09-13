@@ -44,7 +44,7 @@ public class RandomLineInFile {
 
 	
 	/**
-	 * Effiecient and optimal. This is also called Reservoir sampling
+	 * Efficient and optimal. This is also called Reservoir sampling
 	 * @param myfile
 	 * @return
 	 * @throws FileNotFoundException
