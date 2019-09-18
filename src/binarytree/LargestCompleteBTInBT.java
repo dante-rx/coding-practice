@@ -1,9 +1,14 @@
 package binarytree;
 
+/**
+ * Find the largest Complete Binary Tree in Binary Tree
+ * Complete Binary Tree-  parent is having equal number of left and right childrens, Trees filled in Order.
+ * @author nagendra
+ *
+ */
 public class LargestCompleteBTInBT {
 
 	public static void main(String[] args) {
-		System.out.println("hello world");
 		/**
 		 * (1, (2, None, (4, None, None)), (3, (5, (7, None, None), (8, None, None)),
 		 * (6, (9, None, None), (10, (11, None, None), None))))
@@ -28,8 +33,8 @@ public class LargestCompleteBTInBT {
 		t2.l.r= new Tree(4);
 		t2.r= new Tree(3);
 		
-		System.out.println(solution(t1));
-		System.out.println(solution(t2));
+		System.out.println(solution(t1)); // 7
+		System.out.println(solution(t2)); // 3
 		
 	}
 
@@ -42,9 +47,6 @@ public class LargestCompleteBTInBT {
 	public static int findLargestCompleteTree(Tree node, int[]  sol) {
 		if (node == null) {
 			return 0;
-		}
-		if (node.l == null || node.r == null) {
-			return 1;
 		}
 		int left = findLargestCompleteTree(node.l, sol);
 		int right = findLargestCompleteTree(node.r, sol);
