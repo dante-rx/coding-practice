@@ -112,46 +112,39 @@ public class BinaryTree {
 		}
 		return 1 + Math.max(getHeight(node.left), getHeight(node.right));
 	}
-
+	
 	/**
 	 * Print the Binary Tree in Level Order<br>
 	 * Start with level 0<br>
 	 * Use Queue to track out numbers<br>
 	 * add \n to indicate a new level is starting root element is considered to
-	 * be in level 0
+	 * be in level 0.
 	 * 
 	 * @param node
-	 */
-	public void levelOrder(BinaryTreeNode node) {
+	 */	
+	public void printLevelOrder(BinaryTreeNode root) {
+		if (root == null) {
+			return;
+		}
 		Queue<BinaryTreeNode> queue = new LinkedList<>();
-		queue.add(node);
+		queue.add(root);
 		queue.add(null);
 		String str = "Level: 0\t";
 		int level = 0;
 		while (!queue.isEmpty()) {
-			BinaryTreeNode temp = queue.remove();
-			if (temp != null) {
-				str += temp.data + "\t";
-			} else {
-				if (!queue.isEmpty()) {
-					level++;
-					str += "\n" + "Level: " + level + "\t";
+			BinaryTreeNode node = queue.remove();
+			if (node != null) {
+				str += node.data + "\t";
+				if (node.left != null) {
+					queue.add(node.left);
 				}
-
-			}
-
-			if (temp == null && !queue.isEmpty()) {
-				queue.add(null); // adding the level
-			}
-
-			if (temp != null) {
-				if (temp.left != null) {
-					queue.add(temp.left);
+				if (node.right != null) {
+					queue.add(node.right);
 				}
-
-				if (temp.right != null) {
-					queue.add(temp.right);
-				}
+			} else if (node == null && !queue.isEmpty()) {
+				queue.add(null);
+				level++;
+				str += "\nLevel: " + level + "\t";
 			}
 
 		}

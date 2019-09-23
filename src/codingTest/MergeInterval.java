@@ -10,6 +10,21 @@ import java.util.List;
 
 /**
  * @author nagendra
+ * 
+ *         https://leetcode.com/problems/merge-intervals/
+ * 
+ *         Given a collection of intervals, merge all overlapping intervals.
+ * 
+ *         Example 1:
+ * 
+ *         Input: [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]]
+ *         Explanation: Since intervals [1,3] and [2,6] overlaps, merge them
+ *         into [1,6]. Example 2:
+ * 
+ *         Input: [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and
+ *         [4,5] are considered overlapping. NOTE: input types have been changed
+ *         on April 15, 2019. Please reset to default code definition to get new
+ *         method signature.
  *
  */
 public class MergeInterval {
@@ -20,21 +35,22 @@ public class MergeInterval {
 	public static void main(String[] args) {
 		int a[][] = { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
 		int b[][] = merge(a);
-		//print(b);
-		
-		int c[][]= {{1,4}, {0,0}};
-		//print(merge(c));
-		
-		int d[][]= {{2,3},{4,5},{6,7},{8,9},{1,10} };
-		//print(merge(d));
-		
-		int e[][]= {  {2,3},{2,2},{3,3},{1,3},{ 5,7},{2,2},{4,6} };
+		print(b);
+
+		int c[][] = { { 1, 4 }, { 0, 0 } };
+		print(merge(c));
+
+		int d[][] = { { 2, 3 }, { 4, 5 }, { 6, 7 }, { 8, 9 }, { 1, 10 } };
+		print(merge(d));
+
+		int e[][] = { { 2, 3 }, { 2, 2 }, { 3, 3 }, { 1, 3 }, { 5, 7 }, { 2, 2 }, { 4, 6 } };
 		print(merge(e));
 	}
 
 	public static void print(int a[][]) {
 		for (int[] x : a)
-			System.out.println(Arrays.toString(x));
+			System.out.print(Arrays.toString(x) + "\t");
+		System.out.println();
 	}
 
 	public static int[][] merge(int[][] intervals) {

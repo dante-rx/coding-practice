@@ -39,8 +39,8 @@ public class BinaryTreeTest {
 		System.out.println("Post Order:- ");
 		binaryTree.postOrder(root);
 		System.out.println();
-		System.out.println("Level Order:- ");
-		binaryTree.levelOrder(root);
+		System.out.println("Level Order- ");
+		binaryTree.printLevelOrder(root);
 
 		System.out.println("Checking things for height");
 		System.out.println("Height: " + binaryTree.getHeight(root));

@@ -157,19 +157,11 @@ public class CelebrityProblem {
 		}
 
 		// Now check if a is celebrity.
-
-		for (int i = 0; i < n; i++) {
-			if (a == i) {
-				continue;
-			}
-			if (knows(M, a, i)) {
+		for (int i = 0; i < M.length - 1; i++) {
+			if (knows(M, a, i) || !knows(M, i, a)) {
+				System.out.println(" No celebrity");
 				return -1;
 			}
-			
-			if (!knows(M, i, a)) {
-				return -1;
-			}
-
 		}
 		return a;
 
